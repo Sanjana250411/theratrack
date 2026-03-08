@@ -1,0 +1,62 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
+let patients = [];
+let therapies = [];
+
+/* Register patient */
+app.post("/api/patient", (req, res) => {
+
+const {name, age, condition} = req.body;
+
+const patient = {
+id: patients.length + 1,
+name,
+age,
+condition
+};
+
+patients.push(patient);
+
+res.json(patient);
+
+});
+
+/* Get patients */
+app.get("/api/patients", (req, res) => {
+res.json(patients);
+});
+
+/* Schedule therapy */
+app.post("/api/therapy", (req, res) => {
+
+const {patient, therapy, date} = req.body;
+
+const schedule = {
+id: therapies.length + 1,
+patient,
+therapy,
+date
+};
+
+therapies.push(schedule);
+
+res.json(schedule);
+
+});
+
+/* Get therapy schedule */
+app.get("/api/therapies", (req, res) => {
+res.json(therapies);
+});
+
+app.listen(3000, () => {
+console.log("Server running on http://localhost:3000");
+});
