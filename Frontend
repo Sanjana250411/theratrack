@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Panchakarma Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Panchakarma Patient Management</h1>
+
+<h2>Register Patient</h2>
+
+<input id="name" placeholder="Name">
+<input id="age" placeholder="Age">
+<input id="condition" placeholder="Condition">
+
+<button onclick="registerPatient()">Register</button>
+
+<h2>Schedule Therapy</h2>
+
+<input id="pname" placeholder="Patient Name">
+
+<select id="therapy">
+<option>Abhyanga</option>
+<option>Shirodhara</option>
+<option>Nasya</option>
+<option>Pizhichil</option>
+</select>
+
+<input type="date" id="date">
+
+<button onclick="scheduleTherapy()">Schedule</button>
+
+<h2>Patients</h2>
+<ul id="patientList"></ul>
+
+<h2>Therapy Schedule</h2>
+<ul id="therapyList"></ul>
+
+<script src="script.js"></script>
+
+</body>
+</html>
