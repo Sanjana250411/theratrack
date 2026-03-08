@@ -1,0 +1,23 @@
+body{
+font-family: Arial;
+margin: 40px;
+background:#f2f7f2;
+}
+
+h1{
+color:green;
+}
+
+input, select{
+display:block;
+margin:10px 0;
+padding:8px;
+}
+
+button{
+background:green;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
